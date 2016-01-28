@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package model;
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,14 +7,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.AreaCalculationService;
 
 /**
  *
  * @author Alyson
  */
-@WebServlet(name = "CalculationService", urlPatterns = {"/CalculationService"})
-public class CalculationService extends HttpServlet {
-
+@WebServlet(name = "calculationController", urlPatterns = {"/calculationController"})
+public class AreaCalculationController extends HttpServlet {
+    private static final String RESULTS_PAGE = "/results.jsp";
+    private static final String SHAPE = "shape";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,16 +30,14 @@ public class CalculationService extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CalculationService</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CalculationService at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            AreaCalculationService calcServ = new AreaCalculationService();
+            String type = request.getParameter(SHAPE);
+            if(type.equals("rectangle")){
+                String length = request.getParameter("rectangleLength");
+                String width = request.getParameter("rectangleWidth");
+                String responseMsg = calcServ.getRectangleArea(length, width);
+            }
+            
         }
     }
 
