@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,8 +16,10 @@ import model.AreaCalculationService;
  */
 @WebServlet(name = "calculationController", urlPatterns = {"/calculationController"})
 public class AreaCalculationController extends HttpServlet {
+
     private static final String RESULTS_PAGE = "/results.jsp";
     private static final String SHAPE = "shape";
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,12 +35,16 @@ public class AreaCalculationController extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             AreaCalculationService calcServ = new AreaCalculationService();
             String type = request.getParameter(SHAPE);
-            if(type.equals("rectangle")){
+            if (type.equals("rectangle")) {
                 String length = request.getParameter("rectangleLength");
                 String width = request.getParameter("rectangleWidth");
                 String responseMsg = calcServ.getRectangleArea(length, width);
+                request.setAttribute("area", responseMsg);
+                request.setAttribute("shape", type);
+                RequestDispatcher view = request.getRequestDispatcher(RESULTS_PAGE);
+                view.forward(request, response);
             }
-            
+
         }
     }
 
