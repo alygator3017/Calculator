@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><%=request.getAttribute("shape")%> </title>
+        <title><%=request.getAttribute("shapeName")%> </title>
     </head>
     <body>
-        <h1>The area of a <%=request.getAttribute("shape")%></h1>
+        <h1>The area of a <%=request.getAttribute("shapeName")%></h1>
         <p><%=request.getAttribute("area")%> </p>
     </body>
 </html>

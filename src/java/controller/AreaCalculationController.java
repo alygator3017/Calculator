@@ -19,6 +19,8 @@ public class AreaCalculationController extends HttpServlet {
 
     private static final String RESULTS_PAGE = "/results.jsp";
     private static final String SHAPE = "shape";
+    private static final String LAB2_RESULTS_PAGE = "/lab2.jsp";
+    private static final String SHAPE_NAME = "shapeName";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,13 +37,24 @@ public class AreaCalculationController extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             AreaCalculationService calcServ = new AreaCalculationService();
             String type = request.getParameter(SHAPE);
-            if (type.equals("rectangle")) {
+            String shapeName = request.getParameter(SHAPE_NAME);
+            if (type.equals("rectangleLab1")) {
                 String length = request.getParameter("rectangleLength");
                 String width = request.getParameter("rectangleWidth");
                 String responseMsg = calcServ.getRectangleArea(length, width);
                 request.setAttribute("area", responseMsg);
                 request.setAttribute("shape", type);
+                request.setAttribute("shapeName", shapeName);
                 RequestDispatcher view = request.getRequestDispatcher(RESULTS_PAGE);
+                view.forward(request, response);
+            }else if(type.equals("rectangleLab2")){
+                String length = request.getParameter("rectangleLength");
+                String width = request.getParameter("rectangleWidth");
+                String responseMsg = calcServ.getRectangleArea(length, width);
+                request.setAttribute("area", responseMsg);
+                request.setAttribute("shape", type);
+                request.setAttribute("shapeName", shapeName);
+                RequestDispatcher view = request.getRequestDispatcher(LAB2_RESULTS_PAGE);
                 view.forward(request, response);
             }
 
