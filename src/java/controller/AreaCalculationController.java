@@ -56,6 +56,9 @@ public class AreaCalculationController extends HttpServlet {
                 request.setAttribute("shapeName", shapeName);
                 RequestDispatcher view = request.getRequestDispatcher(LAB2_RESULTS_PAGE);
                 view.forward(request, response);
+            }else if(type.equals("circle")){
+                String radius = request.getParameter("radius");
+                String responseMSG = calcServ
             }
 
         }

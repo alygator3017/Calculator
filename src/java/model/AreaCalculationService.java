@@ -27,4 +27,6 @@ public class AreaCalculationService {
         
         return area;
     }
+    
+    public String getCircleArea(String radius)
 }
