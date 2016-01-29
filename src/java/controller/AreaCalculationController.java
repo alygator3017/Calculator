@@ -20,6 +20,7 @@ public class AreaCalculationController extends HttpServlet {
     private static final String RESULTS_PAGE = "/results.jsp";
     private static final String SHAPE = "shape";
     private static final String LAB2_RESULTS_PAGE = "/lab2.jsp";
+    private static final String LAB3_RESULTS_PAGE = "/lab3.jsp";
     private static final String SHAPE_NAME = "shapeName";
 
     /**
@@ -56,9 +57,32 @@ public class AreaCalculationController extends HttpServlet {
                 request.setAttribute("shapeName", shapeName);
                 RequestDispatcher view = request.getRequestDispatcher(LAB2_RESULTS_PAGE);
                 view.forward(request, response);
+            }else if(type.equals("rectangleLab3")){
+                String length = request.getParameter("rectangleLength");
+                String width = request.getParameter("rectangleWidth");
+                String responseMsg = calcServ.getRectangleArea(length, width);
+                request.setAttribute("area", responseMsg);
+                request.setAttribute("shape", type);
+                request.setAttribute("shapeName", shapeName);
+                RequestDispatcher view = request.getRequestDispatcher(LAB3_RESULTS_PAGE);
+                view.forward(request, response);
             }else if(type.equals("circle")){
                 String radius = request.getParameter("radius");
-                String responseMSG = calcServ
+                String responseMsg = calcServ.getCircleArea(radius);
+                request.setAttribute("area", responseMsg);
+                request.setAttribute("shape", type);
+                request.setAttribute("shapeName", shapeName);
+                RequestDispatcher view = request.getRequestDispatcher(LAB3_RESULTS_PAGE);
+                view.forward(request, response);
+            }else if(type.equals("triange")){
+                String base = request.getParameter("base");
+                String height = request.getParameter("height");
+                String responseMsg = calcServ.getTriangleArea(base, height);
+                request.setAttribute("area", responseMsg);
+                request.setAttribute("shape", type);
+                request.setAttribute("shapeName", shapeName);
+                RequestDispatcher view = request.getRequestDispatcher(LAB3_RESULTS_PAGE);
+                view.forward(request, response);
             }
 
         }

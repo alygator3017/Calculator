@@ -17,7 +17,7 @@
         <h1>Area of some Shapes</h1>
         <h3>Rectangle</h3>
         <form name="rectangleForm" id="rectangleForm" class="forms" method="POST" action="calculationController">
-            <input type="hidden" id="shape" name="rectangleShape" value="rectangleLab2"/>
+            <input type="hidden" id="shape" name="rectangleShape" value="rectangleLab3"/>
             <input type="hidden" id="shapeName" name="shapeName" value="Rectangle"/>
             <label class="label">Length</label>
             <input name="rectangleLength" id="rectangleLength" class="input" value="" placeholder="ex: 2.36"/>
@@ -42,7 +42,7 @@
         </div>
         <h3>Circle</h3>
         <form name="circleForm" id="circleForm" class="forms" method="POST" action="CalculationController">
-            <input type="hidden" id="circleShape" name="circleShape" value="circle"/>
+            <input type="hidden" id="shape" name="circleShape" value="circle"/>
             <input type="hidden" id="shapeName" name="shapeName" value="Circle"/>
             <label class="label">Radius</label>
             <input name="radius" id="radius" class="input" value="" placeholder="ex: 2.36"/>
@@ -65,7 +65,7 @@
         </div>
         <h3>Triangle</h3>
         <form name="triangleForm" id="triangleForm" class="forms" method="POST" action="CalculationController">
-            <input type="hidden" id="triangleShape" name="triangleShape" value="triangle"/>
+            <input type="hidden" id="shape" name="triangleShape" value="triangle"/>
             <input type="hidden" id="shapeName" name="shapeName" value="Triangle"/>
             <label class="label">Base</label>
             <input name="base" id="base" class="input" value="" placeholder="ex: 2.36"/>
