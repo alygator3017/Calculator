@@ -58,7 +58,7 @@
                 </div>
             </nav>
             <div class="container">
-                <h1>Lab1 Calculator</h1>
+                <h1>Lab 3 Calculators</h1>
                 <hr/>
                 <div class="row">
                     <form name="rectangleForm" id="rectangleForm" class="forms form-horizontal col col-lg-4" method="POST" action="calculationController" onsubmit="return validateFormRectangle()">
@@ -96,8 +96,8 @@
                     </script>
                     <div  class="col col-lg-3">
                         <div id="answer">
-                            <h5>The area of the <%=request.getAttribute("shapeName")%> is:</h5>
-                            <h2><%=request.getAttribute("area")%> </h2>
+                            <h5>The area of the ${shapeName} is:</h5>
+                            <h2>${area} </h2>
                         </div>
                     </div>
                 </div>

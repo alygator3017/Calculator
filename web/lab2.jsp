@@ -93,8 +93,8 @@
                     });
                 </script>
                 <div id="answer" class="col-lg-3">
-                    <h5>The area of the <%=request.getAttribute("shapeName")%> is:</h5>
-                    <h2><%=request.getAttribute("area")%> </h2>
+                    <h5>The area of the ${shapeName} is:</h5>
+                    <h2>${area} </h2>
                 </div>
                 <div class="push"></div>
             </div>
