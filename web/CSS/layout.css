@@ -3,20 +3,38 @@
     Created on : Jan 27, 2016, 6:58:58 PM
     Author     : Alyson
 */
-
+body{
+    background-color: #EACBF2;
+}
 
 .forms {
-
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 2%;
 }
-
-.label {
-
+legend{
+    text-align: center;
 }
-
+#answer{
+    text-align: center;
+}
+.row{
+    display: table;
+    margin-top:2%;
+}
+.col{
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}
 .input {
 
 }
 
 #shape {
+
+}
+
+.labBtn {
 
 }

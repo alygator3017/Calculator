@@ -1,5 +1,8 @@
 package model;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 /**
  * Service to Calculate the area
  * @author Alyson
@@ -31,8 +34,8 @@ public class AreaCalculationService {
         double r = Double.parseDouble(radius);
         
         a = Math.PI*(Math.pow(r, 2));
-        
-        area = "" + a;
+        NumberFormat formatter = new DecimalFormat("#0.000000");
+        area = "" + formatter.format(a);
         
         return area;
     }
