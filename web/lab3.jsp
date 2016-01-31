@@ -10,8 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lab3</title>
+        <!--jquery-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-        <script type="text/javascript" src="answerBlock.js"></script>
+        <script type="text/javascript" src="../src/java/JS/answerBlock.js"></script>
+        <!--bootstrap-->
+        <link
     </head>
     <body>
         <h1>Lab3 Calculator</h1>
@@ -33,7 +36,7 @@
                 hideAnswerBlock(shape);
             });
         </script>
-        <div id="answer">
+        <div id="answer" class="answerBlock col-md-6">
             <h1>The area of the <%=request.getAttribute("shapeName")%> is:</h1>
             <p><%=request.getAttribute("area")%> </p>
         </div>
