@@ -39,50 +39,70 @@ public class AreaCalculationController extends HttpServlet {
             AreaCalculationService calcServ = new AreaCalculationService();
             String type = request.getParameter(SHAPE);
             String shapeName = request.getParameter(SHAPE_NAME);
-            if (type.equals("rectangleLab1")) {
-                String length = request.getParameter("rectangleLength");
-                String width = request.getParameter("rectangleWidth");
-                String responseMsg = calcServ.getRectangleArea(length, width);
-                request.setAttribute("area", responseMsg);
-                request.setAttribute("shape", type);
-                request.setAttribute("shapeName", shapeName);
-                RequestDispatcher view = request.getRequestDispatcher(RESULTS_PAGE);
-                view.forward(request, response);
-            }else if(type.equals("rectangleLab2")){
-                String length = request.getParameter("rectangleLength");
-                String width = request.getParameter("rectangleWidth");
-                String responseMsg = calcServ.getRectangleArea(length, width);
-                request.setAttribute("area", responseMsg);
-                request.setAttribute("shape", type);
-                request.setAttribute("shapeName", shapeName);
-                RequestDispatcher view = request.getRequestDispatcher(LAB2_RESULTS_PAGE);
-                view.forward(request, response);
-            }else if(type.equals("rectangleLab3")){
-                String length = request.getParameter("rectangleLength");
-                String width = request.getParameter("rectangleWidth");
-                String responseMsg = calcServ.getRectangleArea(length, width);
-                request.setAttribute("area", responseMsg);
-                request.setAttribute("shape", type);
-                request.setAttribute("shapeName", shapeName);
-                RequestDispatcher view = request.getRequestDispatcher(LAB3_RESULTS_PAGE);
-                view.forward(request, response);
-            }else if(type.equals("circle")){
-                String radius = request.getParameter("radius");
-                String responseMsg = calcServ.getCircleArea(radius);
-                request.setAttribute("area", responseMsg);
-                request.setAttribute("shape", type);
-                request.setAttribute("shapeName", shapeName);
-                RequestDispatcher view = request.getRequestDispatcher(LAB3_RESULTS_PAGE);
-                view.forward(request, response);
-            }else if(type.equals("triange")){
-                String base = request.getParameter("base");
-                String height = request.getParameter("height");
-                String responseMsg = calcServ.getTriangleArea(base, height);
-                request.setAttribute("area", responseMsg);
-                request.setAttribute("shape", type);
-                request.setAttribute("shapeName", shapeName);
-                RequestDispatcher view = request.getRequestDispatcher(LAB3_RESULTS_PAGE);
-                view.forward(request, response);
+            if (type != null) {
+                switch (type) {
+                    case "rectangleLab1":
+                        {
+                            String length = request.getParameter("rectangleLength");
+                            String width = request.getParameter("rectangleWidth");
+                            String responseMsg = calcServ.getRectangleArea(length, width);
+                            request.setAttribute("area", responseMsg);
+                            request.setAttribute("shape", type);
+                            request.setAttribute("shapeName", shapeName);
+                            RequestDispatcher view = request.getRequestDispatcher(RESULTS_PAGE);
+                            view.forward(request, response);
+                            break;
+                        }
+                    case "rectangleLab2":
+                        {
+                            String length = request.getParameter("rectangleLength");
+                            String width = request.getParameter("rectangleWidth");
+                            String responseMsg = calcServ.getRectangleArea(length, width);
+                            request.setAttribute("area", responseMsg);
+                            request.setAttribute("shape", type);
+                            request.setAttribute("shapeName", shapeName);
+                            RequestDispatcher view = request.getRequestDispatcher(LAB2_RESULTS_PAGE);
+                            view.forward(request, response);
+                            break;
+                        }
+                    case "rectangleLab3":
+                        {
+                            String length = request.getParameter("rectangleLength");
+                            String width = request.getParameter("rectangleWidth");
+                            String responseMsg = calcServ.getRectangleArea(length, width);
+                            request.setAttribute("area", responseMsg);
+                            request.setAttribute("shape", type);
+                            request.setAttribute("shapeName", shapeName);
+                            RequestDispatcher view = request.getRequestDispatcher(LAB3_RESULTS_PAGE);
+                            view.forward(request, response);
+                            break;
+                        }
+                    case "circle":
+                        {
+                            String radius = request.getParameter("radius");
+                            String responseMsg = calcServ.getCircleArea(radius);
+                            request.setAttribute("area", responseMsg);
+                            request.setAttribute("shape", type);
+                            request.setAttribute("shapeName", shapeName);
+                            RequestDispatcher view = request.getRequestDispatcher(LAB3_RESULTS_PAGE);
+                            view.forward(request, response);
+                            break;
+                        }
+                    case "triangle":
+                        {
+                            String base = request.getParameter("base");
+                            String height = request.getParameter("height");
+                            String responseMsg = calcServ.getTriangleArea(base, height);
+                            request.setAttribute("area", responseMsg);
+                            request.setAttribute("shape", type);
+                            request.setAttribute("shapeName", shapeName);
+                            RequestDispatcher view = request.getRequestDispatcher(LAB3_RESULTS_PAGE);
+                            view.forward(request, response);
+                            break;
+                        }
+                    default:
+                        break;
+                }
             }
 
         }

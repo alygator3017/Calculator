@@ -10,6 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lab3</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script type="text/javascript" src="answerBlock.js"></script>
     </head>
     <body>
         <h1>Lab3 Calculator</h1>
@@ -17,7 +19,7 @@
         <h1>Area of some Shapes</h1>
         <h3>Rectangle</h3>
         <form name="rectangleForm" id="rectangleForm" class="forms" method="POST" action="calculationController">
-            <input type="hidden" id="shape" name="rectangleShape" value="rectangleLab3"/>
+            <input type="hidden" id="shape" name="shape" value="rectangleLab3"/>
             <input type="hidden" id="shapeName" name="shapeName" value="Rectangle"/>
             <label class="label">Length</label>
             <input name="rectangleLength" id="rectangleLength" class="input" value="" placeholder="ex: 2.36"/>
@@ -27,66 +29,31 @@
         </form>
         <script>
             $(document).ready(function () {
-                if (<%=request.getAttribute("rectangleShape")%> == null) {
-                    $('#answers').hide();
-                    console.log("hidden");
-                } else {
-                    $('#answer').show();
-                    console.log("shown");
-                }
-            })
+                var shape = <%=request.getAttribute("shape")%>;
+                hideAnswerBlock(shape);
+            });
         </script>
-        <div id="answers">
+        <div id="answer">
             <h1>The area of the <%=request.getAttribute("shapeName")%> is:</h1>
             <p><%=request.getAttribute("area")%> </p>
         </div>
         <h3>Circle</h3>
-        <form name="circleForm" id="circleForm" class="forms" method="POST" action="CalculationController">
-            <input type="hidden" id="shape" name="circleShape" value="circle"/>
+        <form name="circleForm" id="circleForm" class="forms" method="POST" action="calculationController">
+            <input type="hidden" id="shape" name="shape" value="circle"/>
             <input type="hidden" id="shapeName" name="shapeName" value="Circle"/>
             <label class="label">Radius</label>
             <input name="radius" id="radius" class="input" value="" placeholder="ex: 2.36"/>
             <input type="submit" name="submit" value="Get Area"/>
         </form>
-        <script>
-            $(document).ready(function () {
-                if (<%=request.getAttribute("circleShape")%> == null) {
-                    $('#answers').hide();
-                    console.log("hidden");
-                } else {
-                    $('#answer').show();
-                    console.log("shown");
-                }
-            })
-        </script>
-        <div id="answers">
-            <h1>The area of the <%=request.getAttribute("shapeName")%> is:</h1>
-            <p><%=request.getAttribute("area")%> </p>
-        </div>
         <h3>Triangle</h3>
-        <form name="triangleForm" id="triangleForm" class="forms" method="POST" action="CalculationController">
-            <input type="hidden" id="shape" name="triangleShape" value="triangle"/>
+        <form name="triangleForm" id="triangleForm" class="forms" method="POST" action="calculationController">
+            <input type="hidden" id="shape" name="shape" value="triangle"/>
             <input type="hidden" id="shapeName" name="shapeName" value="Triangle"/>
             <label class="label">Base</label>
             <input name="base" id="base" class="input" value="" placeholder="ex: 2.36"/>
             <label class="label">Height</label>
-            <input name="base" id="height" class="input" value="" placeholder="ex: 2.36"/>
+            <input name="height" id="height" class="input" value="" placeholder="ex: 2.36"/>
             <input type="submit" name="submit" value="Get Area"/>
         </form>
-        <script>
-            $(document).ready(function () {
-                if (<%=request.getAttribute("triangleShape")%> == null) {
-                    $('#answers').hide();
-                    console.log("hidden");
-                } else {
-                    $('#answer').show();
-                    console.log("shown");
-                }
-            })
-        </script>
-        <div id="answers">
-            <h1>The area of the <%=request.getAttribute("shapeName")%> is:</h1>
-            <p><%=request.getAttribute("area")%> </p>
-        </div>
     </body>
 </html>
