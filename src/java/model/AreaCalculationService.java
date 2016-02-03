@@ -30,6 +30,14 @@ public class AreaCalculationService {
         return area;
     }
     
+    /**
+     * Calculates the area of a circle by passing in the radius.
+     * Radius is converted to a double, used to calculate the area,
+     * then turned back into a string and returned.
+     * @param radius radius of the circle.
+     * @return area
+     * @throws IllegalArgumentException
+     */
     public String getCircleArea(String radius) throws IllegalArgumentException{
         double r = Double.parseDouble(radius);
         
