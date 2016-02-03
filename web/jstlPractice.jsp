@@ -13,13 +13,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSTL Practice page</title>
-        <!--js-->
-        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
         <!--sticky footer -->
-        <script src="JS/stickyfooter.js" type="text/javascript"></script>
         <link href="CSS/stickyfooter.css" rel="stylesheet" type="text/css"/>   
         <!--bootstrap-->
-        <script src="JS/bootstrap.min.js" type="text/javascript"></script>
         <link href="http://bootswatch.com/darkly/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -114,5 +111,9 @@
         <div class="footer">
             <p>Copyright (c) 2016</p>
         </div>
+        <!--js-->
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="JS/stickyfooter.js" type="text/javascript"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>        
     </body>
 </html>
