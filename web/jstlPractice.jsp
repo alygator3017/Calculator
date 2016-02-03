@@ -20,12 +20,12 @@
         <link href="CSS/stickyfooter.css" rel="stylesheet" type="text/css"/>   
         <!--bootstrap-->
         <script src="JS/bootstrap.min.js" type="text/javascript"></script>
-        <link href="CSS/bootstrap.paper.min.css" rel="stylesheet" type="text/css"/>
+        <link href="http://bootswatch.com/darkly/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        
+
         <div class="wrapper">
-            <nav class='navbar navbar-default'>
+            <nav class='navbar navbar-inverse'>
                 <div class='container-fluid'>
                     <div class="navbar-header">
                         <!--header stuff-->
@@ -38,11 +38,11 @@
                         <a href="index.html" class="navbar-brand" style="text-align: center">JSTL Practice</a>
                     </div>
                     <div class="navbar-collapse collapse" id="navbar-main">
-                        <ul class="nav navbar-nav">
-                            <!--<li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
                                 <a href="index.html">Home</a>
-                            </li>-->
-                            
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -50,40 +50,42 @@
             <div class="container">
                 <h1>JSTL Practice</h1>
                 <hr/>
-                
-                    <form name="Form" id="rectangleForm" class="forms form-horizontal col col-lg-4" method="POST" action="JSTLPracticeController" onsubmit="return validateFormRectangle()">
-                        <fieldset>
-                            <legend>Stuff</legend>
-                            <div class='form-group'>
-                                <label class="col-lg-2 control-label" for="name">name</label>
-                                <div class='col-lg-10'>
-                                    <input name="name" id="name" class="input form-control" value="" placeholder="enter name here"/>
-                                </div>
+
+                <form name="Form" id="rectangleForm" class="form-horizontal" method="POST" action="JSTLPracticeController" onsubmit="return validateFormRectangle()">
+                    <fieldset>
+                        <legend>Stuff</legend>
+                        <div class='form-group'>
+                            <label class="col-lg-2 control-label" for="name">name</label>
+                            <div class='col-lg-10'>
+                                <input name="name" id="name" class="input form-control" value="" placeholder="enter name here"/>
                             </div>
-                            <div class='form-group'>
-                                <label class="col-lg-2 control-label" for="gender">Gender</label>
-                                <div class='col-lg-10'>
-                                    <input name="gender" id="gender" class="input form-control" value="" placeholder="enter gender: M or F"/>
-                                </div>
+                        </div>
+                        <div class='form-group'>
+                            <label class="col-lg-2 control-label" for="gender">Gender</label>
+                            <div class='col-lg-10'>
+                                <input name="gender" id="gender" class="input form-control" value="" placeholder="enter gender: M or F"/>
                             </div>
-                            <div class="form-group">
-                                <label class="col-lg-6 control-label" for="number">Number between 1 and 14</label>
-                                <div class="col-lg-6">
-                                    <input name="number" id="number" class="input form-control" value="" placeholder="ex:3">
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-6 control-label" for="number">Number between 1 and 14</label>
+                            <div class="col-lg-6">
+                                <input name="number" id="number" class="input form-control" value="" placeholder="ex:3">
                             </div>
-                            <div class="form-group">
-                                <label class="col-lg-6 control-label" for="iceCreamFlavor">Pick a flavor: Vanilla Or Chocolate</label>
-                                <div class="col-lg-6">
-                                    <input name="iceCreamFlavor" id="iceCreamFlavor" class="input form-control" value="" placeholder="vanilla">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-6 control-label" for="iceCreamFlavor">Pick a flavor: Vanilla Or Chocolate</label>
+                            <div class="col-lg-6">
+                                <input name="iceCreamFlavor" id="iceCreamFlavor" class="input form-control" value="" placeholder="vanilla">
                             </div>
-                            <div class='form-group'>
-                                <div class="col-lg-10 col-lg-offset-2">
-                                    <input type="submit" name="submit" value="Get Your Doctor"/>
-                                </div>
+                        </div>
+                        <div class='form-group'>
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <input type="submit" name="submit" class='btn btn-success' value="Get Your Doctor"/>
                             </div>
-                        </fieldset>
-                    </form>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class='well'>
                     <c:set var='flav' scope='session' value='${flavor}'/>
                     <h2>You picked <c:out value="${flav}"/> as your flavor!</h2>
                     <c:choose>
@@ -97,13 +99,14 @@
                             you didn't put in an actual flavor.... failure.
                         </c:otherwise>
                     </c:choose>
-                    <div  class="col col-lg-3">
-                        <div id="answer">
-                            <p>${message}</p>
-                        </div>
+                </div>
+                <div  class="well">
+                    <div id="answer">
+                        <p>${message}</p>
                     </div>
-                
-           
+                </div>
+
+
                 <div class="push"></div>
             </div>
         </div>
