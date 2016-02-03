@@ -67,14 +67,14 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-lg-2 control-label" for="number">Number between 1 and 14</label>
-                                <div class="col-lg-10">
+                                <label class="col-lg-6 control-label" for="number">Number between 1 and 14</label>
+                                <div class="col-lg-6">
                                     <input name="number" id="number" class="input form-control" value="" placeholder="ex:3">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-lg-2 control-label" for="iceCreamFlavor">Pick a flavor: Vanilla Or Chocolate</label>
-                                <div class="col-lg-10">
+                                <label class="col-lg-6 control-label" for="iceCreamFlavor">Pick a flavor: Vanilla Or Chocolate</label>
+                                <div class="col-lg-6">
                                     <input name="iceCreamFlavor" id="iceCreamFlavor" class="input form-control" value="" placeholder="vanilla">
                             </div>
                             <div class='form-group'>
@@ -85,6 +85,7 @@
                         </fieldset>
                     </form>
                     <c:set var='flav' scope='session' value='${flavor}'/>
+                    <h2>You picked <c:out value="${flav}"/> as your flavor!</h2>
                     <c:choose>
                         <c:when test = "${flav == 'chocolate'}">
                             How about Zanzibar Chocolate Ice Cream for a treat?!
@@ -98,7 +99,7 @@
                     </c:choose>
                     <div  class="col col-lg-3">
                         <div id="answer">
-                            <h2>${message}</h2>
+                            <p>${message}</p>
                         </div>
                     </div>
                 

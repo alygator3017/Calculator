@@ -40,7 +40,7 @@ public class JSTLPracticeController extends HttpServlet {
         try {
             msg = jps.getMsg(name, gender, docNum);
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e + " " + e.getMessage());
         }
         request.setAttribute("flavor", flavor);
         request.setAttribute("message", msg);

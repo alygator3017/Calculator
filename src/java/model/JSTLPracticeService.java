@@ -10,7 +10,7 @@ public class JSTLPracticeService {
     String[] doctors = {"First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eigth", "War Doctor", "Ninth", "Tenth", "Tenth", "Eleventh", "Twelfth"};
 
     public String getMsg(String name, String gender, String num) throws IllegalArgumentException{
-        if(name.isEmpty() || gender.isEmpty() || (!gender.equalsIgnoreCase(MALE) || !gender.equalsIgnoreCase(FEMALE)) ||
+        if(name.isEmpty() || gender.isEmpty() || (!gender.equalsIgnoreCase(MALE) && !gender.equalsIgnoreCase(FEMALE)) ||
                 num.isEmpty()){
             throw new IllegalArgumentException();
         }
